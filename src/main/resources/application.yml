@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+    
+spring:
+  thymeleaf:
+    prefix : classpath:templates/
+    check-template-location: true
+    suffix : .html
+    mode: HTML
+    cache : false
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3307/ourhome?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false
+    username: chr
+    password: chr1234
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update  #create #update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+      
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 100MB
+
+  security:
+    user:
+      name: test
+      password: 1234   
+
+itemImgLocation: C:\Workspace\ourhome\study\item
+  
+uploadPath: C:\Workspace\ourhome\study
